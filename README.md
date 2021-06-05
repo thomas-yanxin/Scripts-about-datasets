@@ -2,7 +2,16 @@
 数据集格式处理相关的脚本
 
 ## [coco2voc.py](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/coco2voc.py)
-需要根据具体情况作如下修改：
+首先需要安装相关依赖：
+```python
+!git clone https://gitee.com/yanxin_thomas/cocoapi.git
+%cd cocoapi/PythonAPI/
+!make
+!python setup.py install
+!pip install lxml
+```
+
+然后根据具体情况作如下修改：
 ```python
 # 转换后的VOC存放地址
 CKimg_dir ='/home/aistudio/dataset/VOC/images'

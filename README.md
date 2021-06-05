@@ -43,7 +43,10 @@ def main():
     verbose=True #是否需要看下标记是否正确的开关标记，若是true,就会把标记展示到图片上
     get_CK5(origin_anno_dir,origin_image_dir,verbose)
 ```
-[x2coco.py](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/x2coco.py) [X数据集转COCO数据集]
+  
+  
+
+## [x2coco.py](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/x2coco.py) [数据集转COCO数据集]
 (1) labelmes数据转换为COCO格式：
 ```python
 python tools/x2coco.py \
@@ -56,3 +59,21 @@ python tools/x2coco.py \
                 --test_proportion 0.0
  ```
 (2) voc数据转换为COCO格式：
+```python
+python tools/x2coco.py \
+        --dataset_type voc \
+        --voc_anno_dir path/to/VOCdevkit/VOC2007/Annotations/ \
+        --voc_anno_list path/to/VOCdevkit/VOC2007/ImageSets/Main/trainval.txt \
+        --voc_label_list dataset/voc/label_list.txt \
+        --voc_out_name voc_train.json
+ ```
+  
+
+## [VOC格式检测脚本](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/x2coco.py) [用于VOC格式数据集中检测图片]
+将check.py放入数据集目录中，执行如下命令：
+```python
+%cd dataset/VOC/
+!cat train_list.txt | python check.py
+!cat test_list.txt | python check.py
+!cat val_list.txt | python check.py
+ ```

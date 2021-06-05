@@ -1,7 +1,7 @@
 # Scripts-about-datasets
 数据集格式处理相关的脚本
 
-## [coco2voc.py](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/coco2voc.py)
+## [coco2voc.py](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/coco2voc.py) [COCO格式转VOC格式]
 首先需要安装相关依赖：
 ```python
 !git clone https://gitee.com/yanxin_thomas/cocoapi.git
@@ -43,3 +43,16 @@ def main():
     verbose=True #是否需要看下标记是否正确的开关标记，若是true,就会把标记展示到图片上
     get_CK5(origin_anno_dir,origin_image_dir,verbose)
 ```
+[x2coco.py](https://github.com/thomas-yanxin/Scripts-about-datasets/blob/master/x2coco.py) [X数据集转COCO数据集]
+(1) labelmes数据转换为COCO格式：
+```python
+python tools/x2coco.py \
+                --dataset_type labelme \
+                --json_input_dir ./labelme_annos/ \
+                --image_input_dir ./labelme_imgs/ \
+                --output_dir ./cocome/ \
+                --train_proportion 0.8 \
+                --val_proportion 0.2 \
+                --test_proportion 0.0
+ ```
+(2) voc数据转换为COCO格式：

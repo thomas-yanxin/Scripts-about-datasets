@@ -85,5 +85,5 @@ python tools/x2coco.py \
 ```
 
 ```python
-paddlex --split_dataset --format VOC --dataset_dir D:\MyDataset --val_value 0.2 --test_value 0.1
+!paddlex --split_dataset --format VOC --dataset_dir D:\MyDataset --val_value 0.2 --test_value 0.1
 ```

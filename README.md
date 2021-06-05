@@ -77,3 +77,13 @@ python tools/x2coco.py \
 !cat test_list.txt | python check.py
 !cat val_list.txt | python check.py
  ```
+## [数据集划分]
+```python
+# 安装依赖
+!pip install paddlex
+!pip install paddle2onnx
+```
+
+```python
+paddlex --split_dataset --format VOC --dataset_dir D:\MyDataset --val_value 0.2 --test_value 0.1
+```
